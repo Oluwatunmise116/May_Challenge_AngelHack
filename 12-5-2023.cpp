@@ -50,12 +50,11 @@ int main() {
     root->left = nullptr;
     root->right = nullptr;
 
-    // Initialize codebook
+   
     std::string letters[] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "};
     std::string codewords[] = {"00", "01", "10", "1100", "1101", "1110", "111100", "111101", "111110", "1111110000", "1111110001", "1111110010", "1111110011", "1111110100", "1111110101", "1111110110", "1111110111", "1111111000", "1111111001", "1111111010", "1111111011", "1111111100", "1111111101", "1111111110", "1111111111", "11111111110000", "11111111110001"};
-    int num_letters = 27; // 26 letters and a space
-
-    // Construct Huffman tree
+    int num_letters = 27; 
+    
     for (int i = 0; i < num_letters; i++) {
         Node* curr = root;
         std::string codeword = codewords[i];
@@ -78,7 +77,7 @@ int main() {
         curr->letter = letters[i][0];
     }
 
-    // Decode message
+    
     std::string result;
     decode(encoded, root, result);
     std::cout << "Decoded message: " << result << std::endl;
